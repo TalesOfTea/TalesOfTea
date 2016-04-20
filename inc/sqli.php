@@ -653,7 +653,7 @@ function list_all_tags($table, $statut) {
 	$col = ($table == 'articles') ? 'bt_categories' : 'bt_tags';
 	try {
 		if ($statut !== FALSE) {
-			$res = $GLOBALS['db_handle']->query("SELECT $col FROM $table WHERE bt_statut = $statut");
+			$res = $GLOBALS['db_handle']->query("SELECT $col FROM $table WHERE bt_statut = $statut LIMIT 30");
 		} else {
 			$res = $GLOBALS['db_handle']->query("SELECT $col FROM $table");
 		}
@@ -801,4 +801,3 @@ function traiter_form_rssconf() {
 	redirection($redir);
 
 }
-

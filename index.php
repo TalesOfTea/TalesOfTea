@@ -157,7 +157,7 @@ elseif (isset($_GET['liste'])) {
 	}
 	$tags = implode(" AND ", $tags);
 
-	$query = "SELECT bt_date,bt_id,bt_title,bt_nb_comments,bt_link,bt_categories FROM articles WHERE bt_date <= ".date('YmdHis')." AND ".$tags." ORDER BY bt_date DESC";
+	$query = "SELECT bt_date,bt_id,bt_title,bt_nb_comments,bt_link,bt_categories, bt_statut FROM articles WHERE bt_statut=1 AND bt_date <= ".date('YmdHis')." AND ".$tags." ORDER BY bt_date DESC";
 	$tableau = liste_elements($query, array(), 'articles');
 	afficher_liste($tableau);
 }

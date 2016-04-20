@@ -697,28 +697,14 @@ footer #lastcom ul li a {
 
 /* Footer license */
 footer .infos {
-  /*line-height: 100px !important;*/
-  display: inline;
-}
-
-footer .cc-by-sa {
-  display: inline-block;
-  /*line-height: 100px !important;*/
-	background: white url(cc-by-sa.png) no-repeat;
-	background-size: 100px;
-  background-position: center;
-  margin-left: 11px;
-  padding: 10px;
-  width: 100%;
-  height: 30px;
-}
-
-footer .credits {
+  display: block;
+  text-align: center;
   margin-left: 11px;
   display: inline-block;
-  font-size: 12px;
+  font-size: 10px;
   font-style: italic;
 }
+
 
 /* MOBILE THEME ~ MEDIA QUERIES
 --------------------------------------------------------------------------*/

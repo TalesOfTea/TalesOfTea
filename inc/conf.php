@@ -112,7 +112,7 @@ $GLOBALS['files_ext'] = array(
 
 // Les tags qui permettent d'identifier les pages statiques
 $GLOBALS['static_tags'] = array(
-	'articles'		=> array('ABOUT', 'FRISEL', 'CONTACT'),
+	'articles'		=> array('ABOUT', 'FRISEL', 'CONTACT', 'LEGAL'),
 	'links'	=> array()
 );
 

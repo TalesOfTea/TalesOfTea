@@ -317,18 +317,22 @@ function encart_articles() {
 	$tags = implode(" AND ", $tags);
 
 	// $query = "SELECT c.bt_author, c.bt_id, c.bt_article_id, c.bt_content, a.bt_title FROM commentaires c LEFT JOIN articles a ON a.bt_id=c.bt_article_id WHERE c.bt_statut=1 AND a.bt_statut=1 ORDER BY c.bt_id DESC LIMIT 5";
-	$query = "SELECT a.bt_id, a.bt_date, a.bt_title, a.bt_content, a.bt_link FROM articles a WHERE ".$tags." ORDER BY a.bt_date DESC LIMIT 5";
+	$query = "SELECT a.bt_id, a.bt_date, a.bt_title, a.bt_content, a.bt_link, a.bt_statut FROM articles a WHERE a.bt_statut=1  AND ".$tags." ORDER BY a.bt_date DESC LIMIT 5";
 	$tableau = liste_elements($query, array(), 'articles');
 
 	if (isset($tableau)) {
 		$listeLastArticles = '<ul class="encart_lastarticles">'."\n";
 		foreach ($tableau as $i => $article) {
 			$article['contenu_abbr'] = strip_tags($article['bt_content']);
+			$article['title_abbr'] = strip_tags($article['bt_title']);
 			// limits length of comment abbreviation and name
 			if (strlen($article['contenu_abbr']) >= 60) {
 				$article['contenu_abbr'] = mb_substr($article['contenu_abbr'], 0, 59).'…';
 			}
-			$listeLastArticles .= '<b title="'.date_formate($article['bt_id']).'">'.$article['bt_title'].'</b><br/><a href="'.$article['bt_link'].'">'.$article['contenu_abbr'].'</a>'.'<br>'."\n";
+			if (strlen($article['title_abbr']) >= 60) {
+				$article['title_abbr'] = mb_substr($article['title_abbr'], 0, 59).'…';
+			}
+			$listeLastArticles .= '<b title="'.date_formate($article['bt_id']).'">'.$article['title_abbr'].'</b><br/><a href="'.$article['bt_link'].'">'.$article['contenu_abbr'].'</a>'.'<br>'."\n";
 		}
 		$listeLastArticles .= '</ul>'."\n";
 		return $listeLastArticles;
@@ -346,11 +350,15 @@ function encart_links() {
 		$listeLastLinks = '<ul class="encart_lastlinks">'."\n";
 		foreach ($tableau as $i => $link) {
 			$link['contenu_abbr'] = strip_tags($link['bt_content']);
+			$link['title_abbr'] = strip_tags($link['bt_title']);
 			// limits length of comment abbreviation and name
 			if (strlen($link['contenu_abbr']) >= 60) {
 				$link['contenu_abbr'] = mb_substr($link['contenu_abbr'], 0, 59).'…';
 			}
-			$listeLastLinks .= '<b title="'.date_formate($link['bt_id']).'">'.$link['bt_title'].'</b><br/><a href="index.php?mode=links&amp;id='.$link['bt_id'].'">'.$link['contenu_abbr'].'</a>'.'<br>'."\n";
+			if (strlen($link['title_abbr']) >= 60) {
+				$link['title_abbr'] = mb_substr($link['title_abbr'], 0, 59).'…';
+			}
+			$listeLastLinks .= '<b title="'.date_formate($link['bt_id']).'">'.$link['title_abbr'].'</b><br/><a href="index.php?mode=links&amp;id='.$link['bt_id'].'">'.$link['contenu_abbr'].'</a>'.'<br>'."\n";
 		}
 		$listeLastLinks .= '</ul>'."\n";
 		return $listeLastLinks;
