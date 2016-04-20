@@ -12,3 +12,5 @@ DEMO.sqlite
 themes/default/gravatars/*.png
 admin/cache/favicons/*.png
 admin/cache/gravatar/*.png
+*.png
+*.jpg
