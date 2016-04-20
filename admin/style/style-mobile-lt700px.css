@@ -1,0 +1,141 @@
+
+
+@media (max-width: 700px) {
+	#axe {
+		padding: 20px 10px;
+	}
+
+	/* page écrire */
+	#tag_bloc {
+		display: block;
+	}
+	#date-and-opts {
+		display: block;
+	}
+	#formdate, #formheure, #formstatut, #formallowcomment {
+		display: block;
+		margin: 8px 5px;
+	}
+	#opts {
+		text-align: left;
+	}
+
+	.submit-bttns {
+		padding: 0;
+	}
+	.red-square, .blue-square, .white-square {
+		min-width: 0;
+		padding: 5px;
+	}
+
+	/* comms */
+	.comm-options {
+		visibility: visible;
+	}
+	.comm-options ul {
+		top: 20px;
+	}
+	.comm-options:hover ul {
+		top: 23px;
+	}
+
+	/* links */
+	.linkbloc .link-header {
+		display: block;
+		position: relative;
+	}
+	.linkbloc .titre-lien {
+		padding-right: 10px;
+	}
+	.link-options {
+		visibility: visible;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+	}
+	.link-options ul {
+		top: 20px;
+	}
+	.link-options:hover ul {
+		top: 23px;
+	}
+
+	.linkbloc .link-footer {
+		display: block;
+	}
+	.linkbloc .link-tags {
+		padding: 5px 0;
+	}
+
+	/* file edit */
+	#fichier-meta-info {
+		margin: 20px 0;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+
+	/* preferences */
+	#preferences .form-legend {
+		padding: 0;
+		margin-top: 20px;
+	}
+	#preferences label {
+		width: auto;
+		text-align: left;
+	}
+	#preferences .text,
+	#preferences textarea.text {
+		width: 100%;
+	}
+
+	/* maintenance */
+	#maintenance-form fieldset {
+		max-width: 100%;
+	}
+	#maintenance-form p > label {
+		display: inline;
+		width: auto;
+		text-align: left;
+		padding-right: 0;
+	}
+
+
+	/* paged des RSS */
+	#posts-menu {
+		text-align: left;
+
+		border-left: none;
+		display: block;
+	}
+	#posts-menu ul {
+		margin: 7px 0px;
+	}
+	#posts-menu button {
+		margin: 0px;
+	}
+	#message-return {
+		display: block;
+		margin: 10px auto;
+	}
+	#feed-list {
+		display: none;
+	}
+	#rss-list {
+		padding-right: 0%;
+		padding-left: 0%;
+		margin: auto 0;
+	}
+	#post-list > li {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	#graphs .month:nth-child(-n+24) {
+		display: none;
+	}
+	.graphique .month {
+		width: 27px;
+	}
+
+}
